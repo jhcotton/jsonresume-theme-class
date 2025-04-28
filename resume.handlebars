@@ -70,7 +70,8 @@
     {{#if email}}
     <div class="email">
       <strong>Email</strong>
-      <a href="mailto:{{email}}">{{email}}</a>
+      <a class="noprint" href="mailto:{{email}}">{{email}}</a>
+      <label class="yesprint">{{email}}</label>
     </div>
     {{/if}}
     {{#if phone}}
@@ -98,13 +99,14 @@
         {{/if}}
         <div class="username">
           {{#if url}}
-          <a href="{{url}}">
+          <a class="noprint" href="{{url}}">
             {{#if username}}
               {{username}}
             {{else}}
               {{url}}
             {{/if}}
           </a>
+          <label class="yesprint">{{url}}</label>
           {{else}}
           {{username}}
           {{/if}}
