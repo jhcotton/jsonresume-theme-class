@@ -255,32 +255,32 @@
     <div class="item">
 
       <div class="split">
-      {{#if institution}}
-      <div class="institution">
-        {{institution}}
-      </div>
-      {{/if}}
-
-      <div class="study_date">
-        {{#if startDate}}
-            <span class="startDate">{{formatDate startDate}}</span>
-            {{#if endDate}}
-            <span class="endDate"> - {{formatDate endDate}}</span>
-            {{else}}
-            <span class="endDate"> - Present</span>
-            {{/if}}
-        {{else if endDate}}
-            {{formatDate endDate}}
-        {{else if releaseDate}}
-            {{formatDate releaseDate}}
+        {{#if institution}}
+        <div class="institution">
+          {{institution}}
+        </div>
         {{/if}}
-      </div>
 
-      {{#if url}}
-      <div class="work_website">
-        {{{link url}}}
-      </div>
-      {{/if}}
+        <div class="study_date">
+          {{#if startDate}}
+              <span class="startDate">{{formatDate startDate}}</span>
+              {{#if endDate}}
+              <span class="endDate"> - {{formatDate endDate}}</span>
+              {{else}}
+              <span class="endDate"> - Present</span>
+              {{/if}}
+          {{else if endDate}}
+              {{formatDate endDate}}
+          {{else if releaseDate}}
+              {{formatDate releaseDate}}
+          {{/if}}
+        </div>
+
+        {{#if url}}
+        <div class="work_website">
+          {{{link url}}}
+        </div>
+        {{/if}}
       </div>
 
       {{#if qualification}}
@@ -296,14 +296,6 @@
         {{/each}}
       </ul>
       {{/if}}
-
-      {{#if highlights.length}}
-        <ul>
-            {{#each highlights}}
-            <li>{{.}}</li>
-            {{/each}}
-        </ul>
-        {{/if}}
 
       {{#if dissertation}}
       <div class="dissertation">
