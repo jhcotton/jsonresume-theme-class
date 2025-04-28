@@ -1,4 +1,5 @@
 const fs = require("fs");
+const moment = require('moment');
 const Handlebars = require("handlebars");
 const { marked } = require("marked");
 const { minify } = require('html-minifier');
@@ -63,6 +64,16 @@ Handlebars.registerHelper("date", (body) => {
   });
 
   return `<time datetime="${datetime}">${localeString}</time>`;
+});
+
+Handlebars.registerHelper('formatDate', date => {
+  const onlyYear = moment(date, 'YYYY', true);
+  if (onlyYear.isValid()) {
+    // Ensure correct date
+    return moment(date, 'YYYY').format('YYYY');
+  }
+
+  return moment(date).format('MMM YYYY');
 });
 
 Handlebars.registerHelper("markdown", (body) => {
