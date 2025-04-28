@@ -70,7 +70,8 @@
     {{#if email}}
     <div class="email">
       <strong>Email</strong>
-      <a href="mailto:{{email}}">{{email}}</a>
+      <a class="noprint" href="mailto:{{email}}">{{email}}</a>
+      <label class="yesprint">{{email}}</label>
     </div>
     {{/if}}
     {{#if phone}}
@@ -98,13 +99,14 @@
         {{/if}}
         <div class="username">
           {{#if url}}
-          <a href="{{url}}">
+          <a class="noprint" href="{{url}}">
             {{#if username}}
               {{username}}
             {{else}}
               {{url}}
             {{/if}}
           </a>
+          <label class="yesprint">{{url}}</label>
           {{else}}
           {{username}}
           {{/if}}
@@ -121,26 +123,39 @@
     <h2>Work Experience</h2>
     {{#each resume.work}}
     <div class="item">
-      {{#if name}}
-      <h3 class="work_name">
-        {{name}}
-      </h3>
-      {{else if company}}
-      <h3 class="work_name">
-        {{company}}
-      </h3>
-      {{/if}}
-
-      <div class="split">
+      
+      {{!-- Position Header --}}
       {{#if position}}
-      <div class="work_position">
+      <h3 class="work_position">
         {{position}}
-      </div>
+      </h3>
       {{/if}}
 
+      {{!-- Company | Date --}}
+      <div class="split">
+      {{!-- Name or Company --}}
+      {{#if name}}
+      <div class="work_name">
+        {{name}}
+      </div>
+      {{else if company}}
+      <div class="work_name">
+        {{company}}
+      </div>
+      {{!-- Date --}}
+      {{/if}}
       <div class="work_date">
         {{#if startDate}}
-        {{{date startDate}}} - {{{date endDate}}}
+            <span class="startDate">{{formatDate startDate}}</span>
+            {{#if endDate}}
+            <span class="endDate"> - {{formatDate endDate}}</span>
+            {{else}}
+            <span class="endDate"> - Present</span>
+            {{/if}}
+        {{else if endDate}}
+            {{formatDate endDate}}
+        {{else if releaseDate}}
+            {{formatDate releaseDate}}
         {{/if}}
       </div>
 
@@ -177,27 +192,31 @@
     <h2>Volunteer</h2>
     {{#each resume.volunteer}}
     <div class="item">
-      {{#if organization}}
-      <h3 class="company">
-        {{organization}}
+      {{#if position}}
+      <h3 class="work_position">
+        {{position}}
       </h3>
       {{/if}}
 
       <div class="split">
-      {{#if position}}
-      <div class="work_position">
-        {{position}}
-      </div>
-      {{/if}}
+        {{#if organization}}
+        <div class="company">
+          {{organization}}
+        </div>
+        {{/if}}
 
       <div class="work_date">
         {{#if startDate}}
-        <span class="startDate">
-          {{{date startDate}}}
-        </span>
-        <span class="endDate">
-          - {{{date endDate}}}
-        </span>
+            <span class="startDate">{{formatDate startDate}}</span>
+            {{#if endDate}}
+            <span class="endDate"> - {{formatDate endDate}}</span>
+            {{else}}
+            <span class="endDate"> - Present</span>
+            {{/if}}
+        {{else if endDate}}
+            {{formatDate endDate}}
+        {{else if releaseDate}}
+            {{formatDate releaseDate}}
         {{/if}}
       </div>
 
@@ -236,29 +255,39 @@
     <div class="item">
 
       <div class="split">
-      {{#if institution}}
-      <div class="institution">
-        {{institution}}
-      </div>
-      {{/if}}
+        {{#if institution}}
+        <div class="institution">
+          {{institution}}
+        </div>
+        {{/if}}
 
-      <div class="study_date">
-        {{#if startDate}}
-        <span class="startDate">
-          {{{date startDate}}}
-        </span>
-        <span class="endDate">
-          - {{{date endDate}}}
-        </span>
+        <div class="study_date">
+          {{#if startDate}}
+              <span class="startDate">{{formatDate startDate}}</span>
+              {{#if endDate}}
+              <span class="endDate"> - {{formatDate endDate}}</span>
+              {{else}}
+              <span class="endDate"> - Present</span>
+              {{/if}}
+          {{else if endDate}}
+              {{formatDate endDate}}
+          {{else if releaseDate}}
+              {{formatDate releaseDate}}
+          {{/if}}
+        </div>
+
+        {{#if url}}
+        <div class="work_website">
+          {{{link url}}}
+        </div>
         {{/if}}
       </div>
 
-      {{#if url}}
-      <div class="work_website">
-        {{{link url}}}
-      </div>
+      {{#if area}}
+        <div class="area">
+          {{area}}
+        </div>
       {{/if}}
-      </div>
 
       {{#if qualification}}
       <div class="qualification">

@@ -97,8 +97,9 @@ header h2 {
 }
 
 .work_date,
-.work_position,
+.work_name,
 .work_website,
+.company,
 .institution,
 .study_date,
 .qualification {
@@ -117,13 +118,15 @@ header h2 {
 }
 
 #work,
-#volunteer {
+#volunteer,
+#education {
   padding-bottom: 5px;
   border-bottom: 1px var(--separator-color) solid;
 }
 
 #work .item,
-#volunteer .item {
+#volunteer .item,
+#education .item {
   margin: 25px 0;
 }
 
@@ -138,6 +141,20 @@ header h2 {
 #languages .item,
 #interests .item {
   margin: 0 0 25px 0;
+}
+
+.yesprint {
+  display: none;
+}
+/* Toggle .noprint links and .yesprint labels when printing*/
+@media print {
+  .noprint {
+    display: none;
+  }
+  .yesprint {
+    color: var(--fg-color);
+    display: inline;
+  }
 }
 
 @page {
