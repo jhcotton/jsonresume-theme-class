@@ -3,7 +3,7 @@ body {
   --bg-color: #fff;
   --header-h1-fg-color: #fff;
   --header-h2-fg-color: #f3f3f3;
-  --header-bg-color: #1866c3;
+  --header-bg-color: #56817A;
   --link-color: #3061a5;
   --separator-color: #e2e2e2;
 
@@ -31,8 +31,12 @@ em {
 }
 
 a {
+  color: inherit;
+  text-decoration-style: dashed;
+}
+
+a:hover {
   color: var(--link-color);
-  text-decoration: none;
 }
 
 section {

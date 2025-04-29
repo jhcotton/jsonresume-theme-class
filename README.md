@@ -5,6 +5,12 @@
 
 A modern theme for [JSON Resume](http://jsonresume.org/) which is self-contained. The content of the résumé will work offline and can be hosted without depending on or making requests to third-party servers.
 
+## Changes from forked version
+- open links in new tab
+- link styling
+- usernames with "@" in social profiles
+- background color to teal-ish
+
 ## Usage
 
 ```sh
