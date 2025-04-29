@@ -13,7 +13,6 @@ A modern theme for [JSON Resume](http://jsonresume.org/) which is self-contained
 - open links in new tab
 - link styling
 - usernames with "@" in social profiles
-- background color to teal-ish
 
 ## Usage
 
