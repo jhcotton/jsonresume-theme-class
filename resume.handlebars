@@ -23,7 +23,7 @@
 
     {{#if resume.basics.image}}
     <meta property="og:image" content="{{resume.basics.image}}">
-    <link rel="icon" href="{{resume.basics.image}}">
+    <link rel="icon" href="{{resume.basics.image}}" target="_blank">
     {{#if resume.basics.name}}
     <meta property="og:image:alt" content="Avatar of {{resume.basics.name}}.">
     {{/if}}
@@ -64,20 +64,20 @@
     {{else if website}}
     <div class="website">
       <strong>Website</strong>
-      <a href="{{website}}">{{website}}</a>
+      <a href="{{website}}" target="_blank">{{website}}</a>
     </div>
     {{/if}}
     {{#if email}}
     <div class="email">
       <strong>Email</strong>
-      <a class="noprint" href="mailto:{{email}}">{{email}}</a>
+      <a class="noprint" href="mailto:{{email}}" target="_blank">{{email}}</a>
       <label class="yesprint">{{email}}</label>
     </div>
     {{/if}}
     {{#if phone}}
     <div class="phone">
       <strong>Phone</strong>
-      <a href="tel:{{phone}}">{{phone}}</a>
+      <a href="tel:{{phone}}" target="_blank">{{phone}}</a>
     </div>
     {{/if}}
     </div>
@@ -99,9 +99,9 @@
         {{/if}}
         <div class="username">
           {{#if url}}
-          <a class="noprint" href="{{url}}">
+          <a class="noprint" href="{{url}}" target="_blank">
             {{#if username}}
-              {{username}}
+              @{{username}}
             {{else}}
               {{url}}
             {{/if}}
@@ -165,7 +165,7 @@
       </div>
       {{else if website}}
       <div class="work_website">
-        <a href="{{website}}">{{website}}</a>
+        <a href="{{website}}" target="_blank">{{website}}</a>
       </div>
       {{/if}}
       </div>
@@ -226,7 +226,7 @@
       </div>
       {{else if website}}
       <div class="work_website">
-        <a href="{{website}}">{{website}}</a>
+        <a href="{{website}}" target="_blank">{{website}}</a>
       </div>
       {{/if}}
       </div>
