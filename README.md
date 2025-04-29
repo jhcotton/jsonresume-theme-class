@@ -6,6 +6,10 @@
 A modern theme for [JSON Resume](http://jsonresume.org/) which is self-contained. The content of the résumé will work offline and can be hosted without depending on or making requests to third-party servers.
 
 ## Changes from forked version
+- Detached fork to make pull-requests easier
+- not printing links/mailto
+- New section header order: Position - Company - Date
+- adding degree / area to Education
 - open links in new tab
 - link styling
 - usernames with "@" in social profiles
